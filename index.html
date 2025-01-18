@@ -8,30 +8,32 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body class="font-Bricolage">
-  <div class=" container min-h-screen bg-[url('MEDIA/heronwo.png')]  bg-contain bg-bottom min-w-full">
-    <nav class="bg-black flex items-center justify-between container  border-[2px] p-2 rounded-md mx-auto ">
-        <div class="ml-2">
-            <img src="./MEDIA/LOGO.png" alt="">
-        </div>
-
-        <div class="mr-4 md:flex">
-            <ul class="md:flex md:justify-between md:gap-12 md:items-center z-[] md:z-auto md:static absolute bg-black md:bg-transparent w-full md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 transition-all ease-in duration-0 overflow-visible flex flex-col gap-3 justify-center items-center right-0 md:flex-row text-white border-[2px] md:border-none">
-                <a href="#ABOUT" class="hover:text-[21px] duration-100 ease-in-out">
-                    <li>ABOUT</li>
-                </a>
-                <a href="#TOKENOMICS" class="hover:text-[21px] duration-100 ease-in-out">
-                    <li>TOKENOMICS</li>
-                </a>
-                <a href="#CONTACT" class="hover:text-[21px] duration-100 ease-in-out">
-                    <li>CONTACT</li>
-                </a>
-            </ul>
-        </div>
-
-        <div class="text-3xl cursor-pointer md:hidden block text-white">
-            <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
-        </div>
-    </nav>
+  <div class=" container min-h-screen bg-[url('MEDIA/heronwo.png')]  bg-contain bg-cover bg-bottom min-w-full">
+    
+    
+    <header class="bg-black flex items-center justify-between container  border-[2px] py-2 rounded-md mx-auto sticky">
+            <div class="ml-2">
+                <img src="./MEDIA/LOGO.png" alt="">
+            </div>
+    
+            <div class="mr-4 md:flex">
+                <ul class="md:flex md:justify-between md:gap-12 md:items-center z-[] md:z-auto md:static absolute bg-black md:bg-transparent w-full md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 transition-all ease-in duration-0 overflow-visible flex flex-col gap-3 justify-center items-center right-0 md:flex-row text-white border-[2px] md:border-none">
+                    <a href="#ABOUT" class="hover:text-[21px] duration-100 ease-in-out">
+                        <li>ABOUT</li>
+                    </a>
+                    <a href="#TOKENOMICS" class="hover:text-[21px] duration-100 ease-in-out">
+                        <li>TOKENOMICS</li>
+                    </a>
+                    <a href="#CONTACT" class="hover:text-[21px] duration-100 ease-in-out">
+                        <li>CONTACT</li>
+                    </a>
+                </ul>
+            </div>
+    
+            <div class="text-3xl cursor-pointer md:hidden block text-white">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </div>
+    </header>
     <div class="w-[90%] mx-auto md:flex md:gap-8">
         <div class="mt-20">
             <div>
@@ -129,6 +131,11 @@
 
         e.name === 'menu-outline' ? (e.name = "close-outline",list.classList.add('top-[0px]') , list.classList.add('opacity-100')) : (e.name = "menu-outline" ,list.classList.remove('top-[0px]'),list.classList.remove('opacity-100'))
     }
+
+    window.addEventListener("scroll", function() {
+      var header = document.querySelector("header") 
+      header.classList.toggle("sticky", window.scrollY > 0) 
+    })
 </script>
 </body>
 </html>
